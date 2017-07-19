@@ -225,10 +225,18 @@ const expectedKeys = [
   'id', 'name', 'age', 'city'
 ];
 
-function validateKeys(object, expectedKeys) {  
- // your code here
-
+function validateKeys(object, expectedKeys) {
+    if (Object.keys(object).length != expectedKeys.length){
+        return false;
+    }
+    for (let i = 0; i < expectedKeys.length; i++) {
+        if ( !Object.keys(object).includes(expectedKeys[i]) ) {
+            return false;
+        } 
+    }
+    return true;
 }
+
 
 
 /* From here down, you are not expected to 
